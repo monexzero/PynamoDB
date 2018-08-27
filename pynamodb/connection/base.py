@@ -354,7 +354,7 @@ class Connection(object):
                 response = self.requests_session.send(
                     prepared_request,
                     timeout=self._request_timeout_seconds,
-                    proxies=self.client._endpoint.proxies,
+                    proxies=None,
                 )
                 data = response.json()
             except (requests.RequestException, ValueError) as e:
